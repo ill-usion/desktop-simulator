@@ -5,7 +5,7 @@ const contextMenu = document.querySelector("#context-menu");
 const tbTime = document.querySelector("#taskbar--datetime-time");
 const tbDate = document.querySelector("#taskbar--datetime-date");
 
-const WALLPAPER_IMAGE = "/assets/wallpaper.jpg";
+const WALLPAPER_IMAGE = "./assets/wallpaper.jpg";
 
 document.addEventListener("DOMContentLoaded", async () => {
     document.body.style.backgroundImage = `url(${WALLPAPER_IMAGE})`;
