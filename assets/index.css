@@ -91,7 +91,7 @@ body {
 } */
 
 .taskbar--start-logo {
-    content: url("/assets/windows.svg");
+    content: url("./assets/windows.svg");
     height: 25px;
 }
 
@@ -115,7 +115,7 @@ body {
 }
 
 .taskbar--search-icon {
-    content: url("/assets/magnifying-glass.svg");
+    content: url("./assets/magnifying-glass.svg");
     transform: scaleX(-1);
     width: 17px;
     margin-left: 1rem;
