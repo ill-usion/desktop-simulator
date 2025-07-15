@@ -18,7 +18,7 @@ body {
 #context-menu {
     --ctx-x: 0;
     --ctx-y: 0;
-    
+
     position: absolute;
     top: var(--ctx-y);
     left: var(--ctx-x);
@@ -91,8 +91,7 @@ body {
 } */
 
 .taskbar--start-logo {
-    content: url("./assets/windows.svg");
-    height: 25px;
+    width: 25px;
 }
 
 .taskbar--search-wrapper {
@@ -115,7 +114,6 @@ body {
 }
 
 .taskbar--search-icon {
-    content: url("./assets/magnifying-glass.svg");
     transform: scaleX(-1);
     width: 17px;
     margin-left: 1rem;
