@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Simulator</title>
+    <link rel="stylesheet" href="/assets/index.css">
+    <link rel="preload" href="/assets/wallpaper.jpg" as="image">
+    <script src="/assets/index.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <div id="desktop-area">
+            <div class="" id="desktop--apps-grid">
+
+            </div>
+        </div>
+        <div id="taskbar-area">
+            <div id="taskbar--start-button" class="taskbar--app" title="Start">
+                <span class="taskbar--start-logo"></span>
+            </div>
+            <div class="taskbar--search-wrapper">
+                <span class="taskbar--search-icon"></span>
+                <input type="text" name="search" id="taskbar--search" placeholder="Type here to search..." disabled>
+            </div>
+            <ul id="taskbar--appslist">
+
+            </ul>
+            <div class="taskbar--datetime-wrapper">
+                <span id="taskbar--datetime-time"></span>
+                <span id="taskbar--datetime-date">15/07/2025</span>
+            </div>
+        </div>
+        <menu id="context-menu" type="context" data-hidden="true">
+            <div class="context-menu--item">New</div>
+            <div class="context-menu--item">View</div>
+            <div class="context-menu--item">Refresh</div>
+            <hr>
+            <div class="context-menu--item">Paste</div>
+            <div class="context-menu--item">Copy</div>
+            <hr>
+            <div class="context-menu--item">Still a WIP...</div>
+        </menu>
+    </main>
+</body>
+
+</html>

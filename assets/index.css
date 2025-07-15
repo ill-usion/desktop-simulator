@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --taskbar-height: 50px;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#context-menu {
+    --ctx-x: 0;
+    --ctx-y: 0;
+    
+    position: absolute;
+    top: var(--ctx-y);
+    left: var(--ctx-x);
+
+    padding: 2px;
+    margin: 0;
+    min-width: 300px;
+
+    background-color: #f2f2f2;
+
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#context-menu[data-hidden="true"] {
+    display: none;
+}
+
+#context-menu hr {
+    width: 95%;
+    margin-block: 0.3rem;
+
+    border: none;
+    height: 1px;
+    background-color: #919191;
+}
+
+.context-menu--item {
+    user-select: none;
+    cursor: pointer;
+    padding-inline-start: 3rem;
+    padding-block: 3px;
+}
+
+.context-menu--item:hover {
+    background-color: #d9d9d9;
+}
+
+#desktop-area {
+    min-height: calc(100vh - var(--taskbar-height));
+}
+
+#taskbar-area {
+    position: relative;
+    display: flex;
+    min-height: var(--taskbar-height);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.taskbar--app {
+    cursor: pointer;
+    height: var(--taskbar-height);
+    width: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskbar--app:hover {
+    background-color: #fff2;
+}
+
+/* #taskbar--start-button {
+} */
+
+.taskbar--start-logo {
+    content: url("/assets/windows.svg");
+    height: 25px;
+}
+
+.taskbar--search-wrapper {
+    width: 400px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+#taskbar--search {
+    outline: transparent;
+    color: black;
+    border: none;
+
+    height: 100%;
+    width: 100%;
+
+    padding: 1rem 1rem 1rem 0.5rem;
+    font-size: 1rem;
+}
+
+.taskbar--search-icon {
+    content: url("/assets/magnifying-glass.svg");
+    transform: scaleX(-1);
+    width: 17px;
+    margin-left: 1rem;
+    opacity: 0.6;
+}
+
+#taskbar--appslist {
+    list-style: none;
+    padding: 0;
+}
+
+.taskbar--datetime-wrapper {
+    color: white;
+    font-weight: bold;
+
+    position: absolute;
+    right: 0;
+    height: calc(100% - 2px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-inline: 6px;
+}
