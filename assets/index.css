@@ -4,7 +4,7 @@
 }
 
 :root {
-    --taskbar-height: 50px;
+    --taskbar-height: 48px;
     overflow: hidden;
 }
 
@@ -104,13 +104,15 @@ body {
 
 #taskbar-area {
     position: relative;
-    display: flex;
     min-height: var(--taskbar-height);
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+    backdrop-filter: blur(10px); /* blur the background behind it */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* subtle top border like Windows 10 */
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 0;
+    z-index: 9999; 
 }
 
 .taskbar--app {
