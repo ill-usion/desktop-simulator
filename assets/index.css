@@ -22,23 +22,31 @@ body {
     position: absolute;
     top: var(--ctx-y);
     left: var(--ctx-x);
+}
 
-    padding: 2px;
+#context-menu,
+.context-menu--nested {
+    z-index: 99;
+
+    padding: 4px;
     margin: 0;
-    min-width: 300px;
+    min-width: 250px;
 
     background-color: #f2f2f2;
 
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+
+    border: 1px solid #a0a0a0;
 }
 
 #context-menu[data-hidden="true"] {
     display: none;
 }
 
-#context-menu hr {
+#context-menu hr,
+.context-menu--nested hr {
     width: 95%;
     margin-block: 0.3rem;
 
@@ -48,14 +56,46 @@ body {
 }
 
 .context-menu--item {
+    position: relative;
     user-select: none;
     cursor: pointer;
     padding-inline-start: 3rem;
     padding-block: 3px;
+    width: 100%;
 }
 
 .context-menu--item:hover {
     background-color: #d9d9d9;
+}
+
+.context-menu--item[data-disabled="true"] {
+    pointer-events: none;
+    color: #858585;
+}
+
+.context-menu--item-name {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.context-menu--item-name:after {
+    content: url("./icons/pointer-right.svg");
+    width: 15px;
+    height: 100%;
+    margin-right: 3px;
+}
+
+.context-menu--nested {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+.context-menu--item:hover > .context-menu--nested {
+    display: block;
 }
 
 #desktop-area {

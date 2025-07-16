@@ -39,7 +39,7 @@ async function updateTime() {
 
 document.addEventListener("contextmenu", async (e) => {
     e.preventDefault();
-    await showContextMenu(e.clientX, e.clientY);
+    if (e.target === desktop) await showContextMenu(e.clientX, e.clientY);
 });
 
 document.addEventListener("click", async (e) => {

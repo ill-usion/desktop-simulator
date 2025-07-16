@@ -19,12 +19,12 @@
         <div id="taskbar-area">
             <div id="taskbar--start-button" class="taskbar--app" title="Start">
                 <span class="taskbar--start-logo">
-                    <img src="./assets/windows.svg" alt="Windows logo" />
+                    <img src="./assets/icons/windows.svg" alt="Windows logo" />
                 </span>
             </div>
             <div class="taskbar--search-wrapper">
                 <span class="taskbar--search-icon">
-                    <img src="./assets/magnifying-glass.svg" alt="Search" />
+                    <img src="./assets/icons/magnifying-glass.svg" alt="Search" />
                 </span>
                 <input type="text" name="search" id="taskbar--search" placeholder="Type here to search..." disabled>
             </div>
@@ -37,14 +37,55 @@
             </div>
         </div>
         <menu id="context-menu" type="context" data-hidden="true">
-            <div class="context-menu--item">New</div>
-            <div class="context-menu--item">View</div>
+            <div class="context-menu--item">
+                <span class="context-menu--item-name">
+                    View
+                </span>
+                <div class="context-menu--nested">
+                    <div class="context-menu--item">Large icons</div>
+                    <div class="context-menu--item">Medium icons</div>
+                    <div class="context-menu--item">Small icons</div>
+                    <hr>
+                    <div class="context-menu--item">Auto arrange icons</div>
+                    <div class="context-menu--item">Align icons to grid</div>
+                    <hr>
+                    <div class="context-menu--item">Show desktop icons</div>
+                </div>
+            </div>
+            <div class="context-menu--item">
+                <span class="context-menu--item-name">
+                    Sort by
+                </span>
+                <div class="context-menu--nested">
+                    <div class="context-menu--item">Name</div>
+                    <div class="context-menu--item">Size</div>
+                    <div class="context-menu--item">Item type</div>
+                    <div class="context-menu--item">Date modified</div>
+                </div>
+            </div>
             <div class="context-menu--item">Refresh</div>
             <hr>
-            <div class="context-menu--item">Paste</div>
-            <div class="context-menu--item">Copy</div>
+            <div class="context-menu--item" data-disabled="true">Paste</div>
+            <div class="context-menu--item" data-disabled="true">Paste shortcut</div>
             <hr>
-            <div class="context-menu--item">Still a WIP...</div>
+            <div class="context-menu--item">
+                <span class="context-menu--item-name">
+                    New
+                </span>
+                <div class="context-menu--nested">
+                    <div class="context-menu--item">Folder</div>
+                    <div class="context-menu--item">Shortcut</div>
+                    <hr>
+                    <div class="context-menu--item">Text Document</div>
+                </div>
+            </div>
+            <hr>
+            <div class="context-menu--item">
+                Display settings
+            </div>
+            <div class="context-menu--item">
+                Personalize
+            </div>
         </menu>
     </main>
 </body>
