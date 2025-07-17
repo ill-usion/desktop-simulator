@@ -108,6 +108,7 @@ class DesktopWindow {
 
             const titlebarIcon = document.createElement("img");
             titlebarIcon.src = this.icon;
+            titlebarIcon.draggable = false;
             const titlebarTitle = document.createElement("span");
             titlebarTitle.innerText = this.title;
 
@@ -131,6 +132,7 @@ class DesktopWindow {
                 );
 
                 const icon = document.createElement("img");
+                icon.draggable = false;
                 icon.src = "./assets/icons/minimize.svg";
                 minimizeButton.appendChild(icon);
 
@@ -152,6 +154,7 @@ class DesktopWindow {
 
                 const icon = document.createElement("img");
                 icon.src = "./assets/icons/maximize.svg";
+                icon.draggable = false;
                 maximizeButton.appendChild(icon);
 
                 titlebarButtons.appendChild(maximizeButton);
@@ -169,6 +172,7 @@ class DesktopWindow {
 
                 const icon = document.createElement("img");
                 icon.src = "./assets/icons/close.svg";
+                icon.draggable = false;
                 closeButton.appendChild(icon);
 
                 titlebarButtons.appendChild(closeButton);
