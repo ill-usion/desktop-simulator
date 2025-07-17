@@ -3,12 +3,38 @@
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 17px;
+    height: 17px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #a0a0a0;
+    border-radius: 0;
+    border: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #808080;
+}
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #a0a0a0 #f0f0f0;
+}
+
 :root {
     --taskbar-height: 48px;
+    --resize-handle-size: 3px;
     overflow: hidden;
 }
 
 body {
+    z-index: 0;
     margin: 0;
     background-position: center;
     background-repeat: no-repeat;
@@ -147,6 +173,19 @@ body {
     background-color: #fff2;
 }
 
+#taskbar--appslist {
+    margin-block: 0;
+    display: flex;
+}
+
+.taskbar--app[data-active="true"] {
+    border-bottom: 5px solid white;
+}
+
+.taskbar--app img {
+    height: 30px;
+}
+
 /* #taskbar--start-button {
 } */
 
@@ -198,4 +237,159 @@ body {
     justify-content: space-around;
     align-items: center;
     margin-inline: 6px;
+}
+
+.window {
+    --pos-x: 100px;
+    --pos-y: 100px;
+    --win-height: 400px;
+    --win-width: 600px;
+    position: absolute;
+
+    top: var(--pos-y);
+    left: var(--pos-x);
+    height: var(--win-height);
+    width: var(--win-width);
+
+    min-height: 300px;
+    min-width: 300px;
+
+    background: white;
+    border: 1px solid #d4d4d4;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.2),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+
+    overflow: auto;
+}
+
+.window[data-z="normal"] {
+    z-index: 10;
+}
+
+.window[data-z="focused"] {
+    z-index: 20;
+}
+
+.window[data-z="top-most"] {
+    z-index: 30;
+}
+
+.window[data-state="desktop"] {
+    display: block;
+}
+
+.window[data-state="minimized"] {
+    display: none;
+}
+
+.window[data-state="maximized"] {
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: calc(100vh - var(--taskbar-height));
+}
+
+.window--titlebar {
+    height: 30px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+}
+
+.window--titlebar-info {
+    display: flex;
+    align-items: center;
+}
+
+.window--titlebar-info span {
+    white-space: nowrap;
+}
+
+.window--titlebar-info img {
+    height: 23px;
+    margin-inline: 6px;
+}
+
+.window--titlebar-buttons {
+    height: 100%;
+}
+
+.window--titlebar-buttons button {
+    height: 100%;
+    width: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.window--titlebar-buttons button:hover {
+    background-color: #eee;
+}
+
+.resize-handle {
+    position: absolute;
+    background: transparent;
+    z-index: 1000;
+}
+
+/* Sides */
+.resize-handle-top {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--resize-handle-size);
+    cursor: ns-resize;
+}
+.resize-handle-right {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: var(--resize-handle-size);
+    cursor: ew-resize;
+}
+.resize-handle-bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--resize-handle-size);
+    cursor: ns-resize;
+}
+.resize-handle-left {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--resize-handle-size);
+    cursor: ew-resize;
+}
+
+/* Corners */
+.resize-handle-top-left {
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    cursor: nwse-resize;
+}
+.resize-handle-top-right {
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    cursor: nesw-resize;
+}
+.resize-handle-bottom-left {
+    bottom: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    cursor: nesw-resize;
+}
+.resize-handle-bottom-right {
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    cursor: nwse-resize;
 }
