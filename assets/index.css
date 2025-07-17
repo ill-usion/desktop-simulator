@@ -147,6 +147,7 @@ body {
 }
 
 #taskbar-area {
+    user-select: none;
     position: relative;
     min-height: var(--taskbar-height);
     background: rgba(0, 0, 0, 0.6);
@@ -296,6 +297,7 @@ body {
     cursor: move;
     display: flex;
     justify-content: space-between;
+    user-select: none;
 }
 
 .window--titlebar-info {
