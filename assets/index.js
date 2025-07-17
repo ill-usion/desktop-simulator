@@ -44,7 +44,8 @@ document.addEventListener("contextmenu", async (e) => {
 
 document.addEventListener("click", async (e) => {
     if (
-        e.target === desktop &&
+        (e.target.closest("#desktop-area") === desktop ||
+            e.target.closest("#taskbar-area") === taskbar) &&
         contextMenu.getAttribute("data-hidden") === "false"
     ) {
         await hideContextMenu();

@@ -59,7 +59,7 @@ body {
     position: relative;
     user-select: none;
     cursor: pointer;
-    padding-inline-start: 3rem;
+    padding-inline-start: 2.5rem;
     padding-block: 3px;
     width: 100%;
 }
@@ -71,6 +71,24 @@ body {
 .context-menu--item[data-disabled="true"] {
     pointer-events: none;
     color: #858585;
+}
+
+.context-menu--item:has(> .context-menu--item-icon) {
+    height: 24px;
+    padding-inline-start: 0;
+    display: flex;
+    align-items: center;
+}
+
+.context-menu--item-icon {
+    display: inline-block;
+    padding-inline: 0.5rem;
+    max-height: 100%;
+    width: 2.5rem;
+}
+
+.context-menu--item-icon img {
+    height: 100%;
 }
 
 .context-menu--item-name {
@@ -105,14 +123,14 @@ body {
 #taskbar-area {
     position: relative;
     min-height: var(--taskbar-height);
-    background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
-    backdrop-filter: blur(10px); /* blur the background behind it */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* subtle top border like Windows 10 */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     padding: 0 10px 0 0;
-    z-index: 9999; 
+    z-index: 9999;
 }
 
 .taskbar--app {
