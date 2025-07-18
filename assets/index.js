@@ -22,6 +22,7 @@ class DesktopWindow {
 
         this.createWindow();
         this.unfocus();
+        this.fetchWindowImplementation();
 
         this.initResizeHandles();
         this.registerTaskbar();
@@ -291,6 +292,20 @@ class DesktopWindow {
         });
     }
 
+    fetchWindowImplementation() {
+        const impls = document.getElementById("window-implementations");
+        const impl = impls.querySelector(
+            `.window-implementation[data-for="${this.id}"]`
+        );
+
+        if (!impl)
+            return;
+
+        this.windowHandle.appendChild(impl);
+
+        console.log(impl)
+    }
+
     focus() {
         document.querySelectorAll(".window").forEach((win) => {
             if (win.id === this.id) return;
@@ -352,17 +367,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             600,
             400,
             "win-0"
-        )
-    );
-    windows.push(
-        new DesktopWindow(
-            "File Explorer",
-            "./assets/icons/explorer.png",
-            600,
-            600,
-            300,
-            300,
-            "win-1"
         )
     );
     document.body.style.backgroundImage = `url(${WALLPAPER_IMAGE})`;

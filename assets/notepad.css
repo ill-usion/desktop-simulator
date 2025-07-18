@@ -1,0 +1,37 @@
+.np-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.np-toolbar {
+    position: sticky;
+    top: 0;
+    display: block;
+}
+
+.np-toolbar--items {
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+
+.np-toolbar--items li {
+    cursor: pointer;
+    padding-inline: 0.3rem;
+}
+
+.np-toolbar--items li:hover {
+    background-color: #f0f0f0
+}
+
+#notepad-content {
+    outline: transparent;
+    resize: none;
+    border: none;
+    width: 100%;
+    height: calc(100% - 18px);
+    font-family: monospace;
+    font-size: 1rem;
+}

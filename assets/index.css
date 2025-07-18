@@ -261,7 +261,10 @@ body {
         0 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 1px;
 
-    overflow: auto;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .window[data-z="normal"] {
@@ -276,9 +279,9 @@ body {
     z-index: 30;
 }
 
-.window[data-state="desktop"] {
-    display: block;
-}
+/* .window[data-state="desktop"] {
+    display: flex;
+} */
 
 .window[data-state="minimized"] {
     display: none;
@@ -394,4 +397,13 @@ body {
     width: 10px;
     height: 10px;
     cursor: nwse-resize;
+}
+
+#window-implementations {
+    display: none;
+}
+
+.window-implementation {
+    overflow: auto;
+    height: 100%;
 }
